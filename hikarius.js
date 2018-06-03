@@ -79,7 +79,7 @@ if(message.content === prefix + "info"){
      .setColor("FFFFFF")
      .setTitle("🦁 Hikarius | Info")
      .addField("_ _","_ _")
-     .setThumbnail(message.author.avatarURL)
+     .setThumbnail(message.guild.iconURL)
      .addField("**Nom du Discord :**", message.guild.name)
      .addField("**Propriétaire du discord :**", message.guild.owner)
      .addField("**Crée le :**", message.guild.createdAt)
