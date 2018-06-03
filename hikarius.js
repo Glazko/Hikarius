@@ -6,7 +6,7 @@ const Discord = require('discord.js'),
       client = new Discord.Client();
 
 var prefix = "h!";
-var token = (process.enc.TOKEN);
+var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
