@@ -240,9 +240,10 @@ if(!message.content.startsWith(prefix)) return;
             message.delete()
         }   
         
-        if(message.content === prefix + 'ping') {
-            message.channel.send("🏓 **Pong :** `" + `${message.createdTimestamp - Date.now()}` + "ms`")
-            message.delete()
+        if(message.content.startsWith(prefix + 'ping')) {
+            message.channel.send (":ping_pong: Pong ...").then((message) => {
+            message.edit(`🏓 Pong ! La latence est de ${message.createdTimestamp} ms et la latence de L'API est de ${Math.round(client.ping)} ms`);
+            });
         }
         
         if (message.content.split(" ")[0] == prefix + "say")
