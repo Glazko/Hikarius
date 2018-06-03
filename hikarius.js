@@ -10,8 +10,8 @@ var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setActivity("être en maintenance ! || Glazko")
-    client.user.setStatus("dnd")
+    client.user.setGame("h!help | 0.0.1 | GlAzKo#0300", "https://www.twitch.tv/hikarius")
+    client.user.setStatus("online")
 }); 
 
 client.on('message', message => {
