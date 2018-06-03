@@ -85,7 +85,7 @@ if(message.content === prefix + "info"){
      .addField("**Crée le :**", message.guild.createdAt)
      .addField("**ID**", message.guild.id)
      .addField("**La région**", message.guild.region)
-     .addField("**Tu as rejoint le :**", message.member.joinedAt - Date.now())
+     .addField("**Tu as rejoint le :**", message.member.joinedAt)
      .addField("**Nombres de membres sur le Discord :**", message.guild.memberCount)
      .addField("**Nombres de rôles :**", message.guild.roles.size)
      .addField("**Nombres de channel :**", message.guild.channels.size)
