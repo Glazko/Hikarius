@@ -52,7 +52,7 @@ if(message.content === prefix + "help"){
     .addField("**<:logohikariuspng:450625849662767104> | Support**","**[Support](https://discord.gg/sAPqbsX)**")
     .setFooter("© Hikarius, 2018")
         .setTimestamp()
-    message.channel.sendMessage(help_embed)
+    message.author.send(help_embed)
     message.delete()
 }
 
@@ -85,7 +85,7 @@ if(message.content === prefix + "info"){
      .addField("**Crée le :**", message.guild.createdAt)
      .addField("**ID**", message.guild.id)
      .addField("**La région**", message.guild.region)
-     .addField("**Tu as rejoint le :**", message.member.joinedAt)
+     .addField("**Tu as rejoint le :**", message.member.joinedAt - Date.now())
      .addField("**Nombres de membres sur le Discord :**", message.guild.memberCount)
      .addField("**Nombres de rôles :**", message.guild.roles.size)
      .addField("**Nombres de channel :**", message.guild.channels.size)
