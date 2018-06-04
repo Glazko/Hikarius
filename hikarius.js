@@ -4,7 +4,7 @@ const Discord = require('discord.js'),
       fs = require("fs"),
       FileSync = require('lowdb/adapters/FileSync'),
       client = new Discord.Client();
-      user = message.mentions.users.first()
+      
   
 var prefix = "h!";
 var token = (process.env.TOKEN);
