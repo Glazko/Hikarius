@@ -4,13 +4,14 @@ const Discord = require('discord.js'),
       fs = require("fs"),
       FileSync = require('lowdb/adapters/FileSync'),
       client = new Discord.Client();
-
+      user = message.mentions.users.first()
+  
 var prefix = "h!";
 var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setGame("h!help | 0.0.1 | GlAzKo#0300", "https://www.twitch.tv/hikarius")
+    client.user.setGame("h!help | GlAzKo ❤ HelloDev | 0.0.1", "https://www.twitch.tv/hikarius")
     client.user.setStatus("online")
 }); 
 
