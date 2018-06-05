@@ -34,7 +34,6 @@ client.on('message', message => {
 	    .addField("*h!ban <@utilisateur> [Raison]*","Permet de ban un utilisateur.")
 	    .addField("*h!kick <@utilisateur> [Raison]*","Permet de kick un utilisateur.")
         .addField("*h!un/mute <@utilisateur>*","Permet de unmute ou mute un utilisateur.")
-        .addField("*h!clear*","Permet de nettoyer un channel.")
         .addField("_ _","_ _")
         .addField("**<:logohikariuspng:450625849662767104> | Fun**","_ _")
 	    .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
