@@ -43,7 +43,7 @@ client.on('message', message => {
         message.author.send(help_embed);
         message.delete()        
 
-        return message.channel.send("<:logohikariuspng:450625849662767104> | Tu as reçu mon menu d'aide en message privé, va voir :mailbox_with_mail:")
+        return message.channel.send("<:logohikariuspng:450625849662767104> | Le problème de la commande sera réglé delain. ")
 }
 
 //if(message.content === prefix + "help"){
