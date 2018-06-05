@@ -11,7 +11,7 @@ var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setGame("h!help | Batônnet/Invite le | Vérosion 1.0.0", "https://www.twitch.tv/hikarius")
+    client.user.setGame("h!help | Batônnet/Invite le | Version 1.0.0", "https://www.twitch.tv/hikarius")
     client.user.setStatus("online")
 }); 
 
@@ -287,7 +287,7 @@ if(!message.content.startsWith(prefix)) return;
   message.delete()
   }
 	if(message.content === prefix + "sarah"){
-	 message.channel.send("Qui Sarah tu la connais pas ? C'est la développeuse du bot 'Batônnet' si si ta bien compris :D C'est une personne super (*suce*) nan je déconne. N'hésite pas à inviter son bot ;D !)
+	 message.channel.send("Qui Sarah tu la connais pas ? C'est la développeuse du bot 'Batônnet' si si ta bien compris :D C'est une personne super *suce* nan je déconne. N'hésite pas à inviter son bot :smiley: !")
 			      message.delete()
 	 }
 
