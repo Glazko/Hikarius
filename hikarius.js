@@ -16,35 +16,7 @@ client.on("ready", async () => {
 }); 
 
 client.on('message', message => {
-	
-	var msgauthor = message.author.id;
-
-if(message.author.client) return;
-
-if(!db.get("xp").find ({user: msgauthor}).value()){
-    db.get("xp").push({user: msgauthor, x: 2}).write();
-}else{
-var userxpdb = db.get("xp").filter({user: msgauthor}).find("xp").value();
-console.log(userxpdb);
-var userxp = Object.values(userxpdb)
-console.log(userxp)
-console.log(`Nombre d'xp: ${userxp[2]}`)
-
-db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[2] += 2}).write();
-
-if(message.content === prefix + "xp"){
-    var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
-    var xpfinal = Object.values(xp);
-    var xp_embed = new Discord.RichEmbed()
-    .addField("**Hikarius | Statistiques**","_ _")
-    .setThumbnail(message.author.avatarURL)
-    .setColor("Random")
-    .addField("Level in dev","_ _")
-    .addField("Expérience : " + `${xpfinal[2]}` + " expérience.")
-    .setFooter("Hikarius, 2018")
-    .setTimestamp()
-    message.channel.send({embed: xp_embed});
-}}
+// Commande exp \\
 
 //! Commandes Importantes du bot!\\
 
@@ -138,8 +110,8 @@ if(message.content === prefix + "invite"){
 }
 
 if(message.content === prefix +"ban"){
-	let bReason = args.join(" ").slice(22);
     if (message.channel.type === "dm") return;
+    let bReason = args.join(" ").slice(22);
     if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))  return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error);
     if(message.mentions.users.size === 0) {
       return message.channel.send(":warning: | Vous devez mentionner un membre a ban pour que cette commande fonctionne !");
@@ -170,8 +142,8 @@ if(message.content === prefix +"ban"){
 }
         
     if(message.content === prefix +"kick"){
-	    let kReason = args.join(" ").slice(22);
         if (message.channel.type === "dm") return;
+        let kReason = args.join(" ").slice(22)
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))  return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error);
         if(message.mentions.users.size === 0) {
          return message.channel.send(":warning: | Vous devez mentionner un membre a ban pour que cette commande fonctionne !");
@@ -262,8 +234,26 @@ if(!message.content.startsWith(prefix)) return;
             .setTimestamp()
             message.channel.sendEmbed(ball_embed)
             message.delete()
-        }   
-        
+            break;
+
+            case "cat":
+            var replys = [
+                "https://cdn.discordapp.com/attachments/450333866998366234/453659152674193418/QmaPv.png",
+                "https://cdn.discordapp.com/attachments/450333866998366234/453659243396988949/th.png",
+                "https://cdn.discordapp.com/attachments/450333866998366234/453659367452180512/th.png",
+                "https://cdn.discordapp.com/attachments/450333866998366234/453659482149617666/th.png",
+                "https://tse3.mm.bing.net/th?id=OIP.vESUb6dpnwtemKAD-gXCygHaE7&pid=15.1&P=0&w=268&h=179"
+            ];
+            let image = (replys[Math.floor(Math.random() * replys.length)])
+               const cat_embed = new Discord.RichEmbed()
+               .addField("**:cat: | Voici un chat !**", "_ _")
+    .setImage(image)
+    .setColor('#FFFFFF')
+    .setFooter("© Hikarius, 2018")
+    .setTimestamp()
+    message.channel.sendEmbed(cat_embed)
+            message.delete()
+        }
         if(message.content.startsWith(prefix + 'ping')) {
             message.channel.send (":ping_pong: Pong ...").then((message) => {
             message.edit(`🏓 Pong ! La latence est de ${message.createdTimestamp - Date.now()} ms et la latence de L'API est de ${Math.round(client.ping)} ms`);
