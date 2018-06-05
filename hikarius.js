@@ -16,6 +16,35 @@ client.on("ready", async () => {
 }); 
 
 client.on('message', message => {
+	
+	var msgauthor = message.author.id;
+
+if(message.author.client) return;
+
+if(!db.get("xp").find ({user: msgauthor}).value()){
+    db.get("xp").push({user: msgauthor, x: 2}).write();
+}else{
+var userxpdb = db.get("xp").filter({user: msgauthor}).find("xp").value();
+console.log(userxpdb);
+var userxp = Object.values(userxpdb)
+console.log(userxp)
+console.log(`Nombre d'xp: ${userxp[2]}`)
+
+db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[2] += 2}).write();
+
+if(message.content === prefix + "xp"){
+    var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
+    var xpfinal = Object.values(xp);
+    var xp_embed = new Discord.RichEmbed()
+    .addField("**Hikarius | Statistiques**","_ _")
+    .setThumbnail(message.author.avatarURL)
+    .setColor("Random")
+    .addField("Level in dev","_ _")
+    .addField("Expérience : " + `${xpfinal[2]}` + " expérience.")
+    .setFooter("Hikarius, 2018")
+    .setTimestamp()
+    message.channel.send({embed: xp_embed});
+}}
 
 //! Commandes Importantes du bot!\\
 
