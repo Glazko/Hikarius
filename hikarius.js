@@ -109,8 +109,8 @@ if(message.content === prefix + "invite"){
 }
 
 if(message.content === prefix +"ban"){
+	let bReason = args.join(" ").slice(22);
     if (message.channel.type === "dm") return;
-    let bReason = args.join(" ").slice(22);
     if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))  return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error);
     if(message.mentions.users.size === 0) {
       return message.channel.send(":warning: | Vous devez mentionner un membre a ban pour que cette commande fonctionne !");
@@ -141,8 +141,8 @@ if(message.content === prefix +"ban"){
 }
         
     if(message.content === prefix +"kick"){
+	    let kReason = args.join(" ").slice(22);
         if (message.channel.type === "dm") return;
-        let kReason = args.join(" ").slice(22)
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))  return message.reply(":warning: | Vous n'avez pas la permission !").catch(console.error);
         if(message.mentions.users.size === 0) {
          return message.channel.send(":warning: | Vous devez mentionner un membre a ban pour que cette commande fonctionne !");
