@@ -43,7 +43,7 @@ client.on('message', message => {
         message.author.send(help_embed);
         message.delete()        
 
-        return message.channel.send("<:logohikariuspng:450625849662767104> | Le problème de la commande sera réglé delain. ")
+        return message.channel.send("<:logohikariuspng:450625849662767104> | Le problème de la commande sera réglé demain. ")
 }
 
 //if(message.content === prefix + "help"){
