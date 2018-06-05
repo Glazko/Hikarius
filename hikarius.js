@@ -38,8 +38,7 @@ client.on('message', message => {
         .addField("_ _","_ _")
         .addField("**<:logohikariuspng:450625849662767104> | Fun**","_ _")
 	    .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
-	    .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")
-	    .addField("*h!say [Texte]*","Permet de faire dire au bot ce que vous voulez.")
+	    .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")    
          .addField("*h!cat*","Permet de voir des chats aléatoirement.")
         .addField("*h!avatar*","Permet de voir ta photo de profil de plus près.")
         message.author.send(help_embed);
