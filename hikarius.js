@@ -23,7 +23,7 @@ client.on('message', message => {
         var help_embed = new Discord.RichEmbed()
         .setColor("#FFFFFF")
         .setThumbnail("https://cdn.discordapp.com/attachments/442030774976249857/452885262582808588/200w.png")
-        .setTitle("🦁 Hikarius | Help")
+        .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help**")
         .addField("_ _","_ _")
         .addField("**<:logohikariuspng:450625849662767104> | Utilitaires**","_ _")
         .addField("*h!hikarius*","Permet d'en savoir un peu plus sur le bot.")
@@ -41,8 +41,6 @@ client.on('message', message => {
 	    .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")
 	    .addField("*h!say [Texte]*","Permet de faire dire au bot ce que vous voulez.")
         .addField("*h!avatar*","Permet de voir ta photo de profil de plus près.")
-	.setFooter("© Hikarius, 2018")
-        .setTimestamp()
         message.author.send(help_embed);
         message.delete()        
 
@@ -63,7 +61,7 @@ if(message.content === prefix + "hikarius"){
     var hakirius_embed = new Discord.RichEmbed()
         .setColor("FFFFFF")
         .setThumbnail(message.author.avatarURL)
-        .setTitle("🦁 Hikarius | Information")
+        .addField("**<:logohikariuspng:450625849662767104> Hikarius | Hikarius**")
         .addField("_ _","_ _")
         .addField("**Les développeurs :**"," GlAzKo#0300 et HelloDev | √ |#4021")
         .addField("**Mon language de codage :**","JavaScript")
@@ -76,13 +74,13 @@ if(message.content === prefix + "hikarius"){
         message.channel.sendEmbed(hakirius_embed);
         message.delete()
 }
-
+	
 if(message.content === prefix + "info"){
     var info_embed = new Discord.RichEmbed()
      .setColor("FFFFFF")
-     .setTitle("🦁 Hikarius | Info")
+     .addField("**<:logohikariuspng:450625849662767104> Hikarius | Info**")
      .addField("_ _","_ _")
-     .setThumbnail(message.guild.iconURL)
+     .setThumbnail(message.author.avatarURL)
      .addField("**Nom du Discord :**", message.guild.name)
      .addField("**Propriétaire du discord :**", message.guild.owner)
      .addField("**Crée le :**", message.guild.createdAt)
@@ -102,8 +100,8 @@ if(message.content === prefix + "info"){
 if(message.content === prefix + "invite"){
     var invite_embed = new Discord.RichEmbed()
     .setColor("FFFFFF")
-    .setTitle("🦁 Hikarius | Invite")
-    .setThumbnail(message.author.avatarURL)
+    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Invite**")
+    .setThumbnail(message.client.avatarURL)
     .addField("**Voici le lien de Hikarius et du nouveau support !**","**[<:logohikariuspng:450625849662767104> Hikarius](https://discordapp.com/api/oauth2/authorize?client_id=450051278241005569&permissions=272104535&scope=bot)**")
     .setFooter("© Hikarius, 2018")
      .setTimestamp()
@@ -186,7 +184,7 @@ if (message.content.startsWith(prefix + "sondage")) {
     var sondage_embed = new Discord.RichEmbed()
     .setColor("FFFFFF")
     .setThumbnail(message.author.avatarURL)
-    .setTitle("🦁 Hikarius | Sondage")
+    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Sondage**")
     .addField("_ _","_ _")
     .addField(message.author.username + " a fait un sondage, voter vite !","_ _")
     .addField("► " + thingToEcho, "_ _")
@@ -232,7 +230,7 @@ if(!message.content.startsWith(prefix)) return;
             let reponse = (replys[Math.floor(Math.random() * replys.length)])
             var ball_embed = new Discord.RichEmbed()
             .setColor("#FFFFFF")
-            .setTitle("🦁 Hikarius | 8ball")
+            .addField("**<:logohikariuspng:450625849662767104> Hikarius | 8ball**")
             .addField("_ _","_ _")
             .addField("La question est celle ci :", tte)
             .addField("_ _","_ _")
@@ -245,15 +243,18 @@ if(!message.content.startsWith(prefix)) return;
         
         if(message.content.startsWith(prefix + 'ping')) {
             message.channel.send (":ping_pong: Pong ...").then((message) => {
-            message.edit(`🏓 Pong ! La latence du bot est de ${message.createdTimestamp - Date.now()} ms et la latence de L'API est de ${Math.round(client.ping)} ms`);
+            message.edit(`🏓 Pong ! La latence est de ${message.createdTimestamp} ms et la latence de L'API est de ${Math.round(client.ping)} ms`);
             });
         }
+        
+        
         
         if (message.content.split(" ")[0] == prefix + "say")
         
   {
       message.delete().catch(function() {return 0});
       return message.channel.send(message.content.split(" ").splice(1).join(" ")).catch(function() {return 0});
+      message.delete()
   }
   
   if(message.content.startsWith(prefix + 'setConfig')) {
