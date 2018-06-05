@@ -11,7 +11,7 @@ var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setGame("h!help | GlAzKo ❤ HelloDev | 0.0.1", "https://www.twitch.tv/hikarius")
+    client.user.setGame("h!help | Base de données en développement | 0.0.1", "https://www.twitch.tv/hikarius")
     client.user.setStatus("online")
 }); 
 
@@ -252,7 +252,6 @@ if(!message.content.startsWith(prefix)) return;
   {
       message.delete().catch(function() {return 0});
       return message.channel.send(message.content.split(" ").splice(1).join(" ")).catch(function() {return 0});
-      message.delete()
   }
   
   if(message.content.startsWith(prefix + 'setConfig')) {
