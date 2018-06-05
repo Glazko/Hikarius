@@ -16,7 +16,11 @@ client.on("ready", async () => {
 }); 
 
 client.on('message', message => {
-// Commande exp \\
+
+ if(message.content === prefix + "sarah"){
+	 message.channel.send("Qui Sarah tu la connais pas ? C'est la développeuse du bot 'Batônnet' si si ta bien compris :D C'est une personne super (*suce*) nan je déconne. N'hésite pas à inviter son bot ;D !)
+			      message.delete()
+	 }
 
 //! Commandes Importantes du bot!\\
 
