@@ -11,7 +11,7 @@ var token = (process.env.TOKEN);
 
 client.on("ready", async () => {
     console.log("Bot prêt a utilisé !");
-    client.user.setGame("h!help | Base de données en développement | 0.0.1", "https://www.twitch.tv/hikarius")
+    client.user.setGame("h!help | Batônnet/Invite le | Vérosion 1.0.0", "https://www.twitch.tv/hikarius")
     client.user.setStatus("online")
 }); 
 
