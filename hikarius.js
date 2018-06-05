@@ -41,21 +41,23 @@ client.on('message', message => {
 	    .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")
 	    .addField("*h!say [Texte]*","Permet de faire dire au bot ce que vous voulez.")
         .addField("*h!avatar*","Permet de voir ta photo de profil de plus près.")
+	.setFooter("© Hikarius, 2018")
+        .setTimestamp()
         message.author.send(help_embed);
         message.delete()        
 
         return message.channel.send("<:logohikariuspng:450625849662767104> | Tu as reçu mon menu d'aide en message privé, va voir :mailbox_with_mail:")
 }
 
-if(message.content === prefix + "help"){
-    var help_embed = new Discord.RichEmbed()
-    .setColor("#FFFFFF")
-    .addField("**<:logohikariuspng:450625849662767104> | Support**","**[Support](https://discord.gg/sAPqbsX)**")
-    .setFooter("© Hikarius, 2018")
-        .setTimestamp()
-    message.author.send(help_embed)
-    message.delete()
-}
+//if(message.content === prefix + "help"){
+    //var help_embed = new Discord.RichEmbed()
+   // .setColor("#FFFFFF")
+   // .addField("**<:logohikariuspng:450625849662767104> | Support**","**[Support](https://discord.gg/sAPqbsX)**")
+    //.setFooter("© Hikarius, 2018")
+     //   .setTimestamp()
+//  message.author.send(help_embed)
+    //message.delete()
+//}
 
 if(message.content === prefix + "hikarius"){
     var hakirius_embed = new Discord.RichEmbed()
