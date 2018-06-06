@@ -20,11 +20,11 @@ client.on('message', message => {
 
 //! Commandes Importantes du bot!\\
 
-    if(message.content === prefix + "help"){
-    var help_embed = new Discord.RichEmbed()
+   if(message.content === prefix + "help"){
+    var help1_embed = new Discord.RichEmbed()
     .setColor("#FFFFFF")
-    .setThumbnail(client.avatarURL)
-    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help**","_ _")
+    .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
+    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 1/2 :paperclip:**","_ _")
     .addField("**<:logohikariuspng:450625849662767104> | Utilitaires**","_ _")
     .addField("*h!hikarius*","Permet d'en savoir un peu plus sur le bot.")
     .addField("*h!info*","Permet de savoir des info sur ce serveur.")
@@ -35,16 +35,33 @@ client.on('message', message => {
     .addField("*h!kick <@utilisateur> [Raison]*","Permet de kick un utilisateur.")
     .addField("*h!un/mute <@utilisateur>*","Permet de unmute ou mute un utilisateur.")
     .addField("_ _","_ _")
-    .addField("**<:logohikariuspng:450625849662767104> | Fun**","_ _")
+    .addField("**<:logohikariuspng:450625849662767104> | Divers**","_ _")
     .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
     .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")    
-    .addField("*h!avatar*","Permet de voir ta photo de profil de plus près.")
-    .addField("*h!cat*","Permet de voir des chats aléatoirement.")
-    message.author.send(help_embed);
+    .addField("*h!say*","Permet de faire parler le bot.")
+    message.author.send(help1_embed);
     message.delete()        
 
     return message.channel.send("<:logohikariuspng:450625849662767104> | Mon menu d'aide ta été envoyer en privé. :mailbox_with_mail:")
 }
+
+if(message.content === prefix + "help"){
+    var help2_embed = new Discord.RichEmbed()
+    .setColor("#FFFFFF")
+    .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
+    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 2/2 :paperclip: **","_ _")
+    .addField("**<:logohikariuspng:450625849662767104> | Fun**","_ _")
+    .addField("*h!punch*","En développement.")
+    .addField("*h!kiss*","En développement.")
+    .addField("*h!calin*","En développement.")
+    .addField("*h!hug*","En développement.")
+    .addField("_ _","_ _")
+    .addField("**<:logohikariuspng:450625849662767104> | Animaux**","_ _")
+    .addField("*h!cat*","Envoie des chats aléatoirement.")
+    .addField("Cette commande est en développement","merci d'attendre")
+    message.author.send(help2_embed);
+    message.delete() 
+}       
 
 //if(message.content === prefix + "help"){
 //var help_embed = new Discord.RichEmbed()
@@ -77,7 +94,7 @@ if(message.content === prefix + "info"){
 var info_embed = new Discord.RichEmbed()
  .setColor("FFFFFF")
  .addField("**<:logohikariuspng:450625849662767104> Hikarius | Info**","_ _")
- .setThumbnail(message.author.avatarURL)
+ .setThumbnail(message.guild.iconURL)
  .addField("**Nom du Discord :**", message.guild.name)
  .addField("**Propriétaire du discord :**", message.guild.owner)
  .addField("**Crée le :**", message.guild.createdAt)
