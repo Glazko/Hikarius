@@ -41,7 +41,8 @@ client.on('message', message => {
     .addField("*h!say*","Permet de faire parler le bot.")
     message.author.send(helps_embed);
     message.delete()
-
+}
+    if(message.content === prefix + "help"){
         var helps_embed = new Discord.RichEmbed()
         .setColor("#FFFFFF")
         .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
@@ -57,8 +58,10 @@ client.on('message', message => {
         .addField("Cette commande est en développement","merci d'attendre")
         message.author.send(helps_embed);
         message.delete() 
+
+        return message.channel.send("<:logohikariuspng:450625849662767104> | Mon menu d'aide ta été envoyer en privé. :mailbox_with_mail:")
     }
-    return message.channel.send("<:logohikariuspng:450625849662767104> | Mon menu d'aide ta été envoyer en privé. :mailbox_with_mail:")
+
 
 //if(message.content === prefix + "help"){
 //var help_embed = new Discord.RichEmbed()
