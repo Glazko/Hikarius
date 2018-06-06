@@ -25,7 +25,7 @@ client.on('message', message => {
     .setColor("#FFFFFF")
     .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
     .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 1/2 :paperclip:**","_ _")
-    .addField("**🛠 | Utilitaires**","_ _")
+    .addField("**<:discord:432196338369822752> | Utilitaires**","_ _")
     .addField("*h!hikarius*","Permet d'en savoir un peu plus sur le bot.")
     .addField("*h!info*","Permet de savoir des info sur ce serveur.")
     .addField("*h!invite*","Permet d'inviter le bot sur ton serveur.")
@@ -35,16 +35,16 @@ client.on('message', message => {
     .addField("*h!kick <@utilisateur> [Raison]*","Permet de kick un utilisateur.")
     .addField("*h!un/mute <@utilisateur>*","Permet de unmute ou mute un utilisateur.")
     .addField("_ _","_ _")
-    .addField("**🎮 | Divers**","_ _")
+    .addField("**<:manette:396011519038586881> | Divers**","_ _")
     .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
     .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")    
     .addField("*h!say*","Permet de faire parler le bot.")
-    message.author.send(help_embed)
 
         var helps_embed = new Discord.RichEmbed()
         .setColor("#FFFFFF")
+        .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
         .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 2/2 :paperclip: **","_ _")
-        .addField("**🎊 | Fun**","_ _")
+        .addField("**<:teterose:404434115375529984> | Fun**","_ _")
         .addField("*h!punch*","En développement.")
         .addField("*h!kiss*","En développement.")
         .addField("*h!calin*","En développement.")
@@ -268,7 +268,21 @@ if(!message.content.startsWith(prefix)) return;
             "https://cdn.discordapp.com/attachments/450333866998366234/453659243396988949/th.png",
             "https://cdn.discordapp.com/attachments/450333866998366234/453659367452180512/th.png",
             "https://cdn.discordapp.com/attachments/450333866998366234/453659482149617666/th.png",
-            "https://tse3.mm.bing.net/th?id=OIP.vESUb6dpnwtemKAD-gXCygHaE7&pid=15.1&P=0&w=268&h=179"
+            "https://tse3.mm.bing.net/th?id=OIP.vESUb6dpnwtemKAD-gXCygHaE7&pid=15.1&P=0&w=268&h=179",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454009707208900657/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454009848195973121/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454009959760527370/th.png",
+            "http://chainimage.com/images/fond-ecran-chat-34.jpg",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010261683306496/sleepingcat001.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010378033168395/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010507742019605/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010617561481216/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010712373854208/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010856062320650/ab7d7ab1ab85416111b70b2f6dbdc179--grey-cats-maine-coon-cats.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454010962194726914/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454011090041307148/th.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454011269998182420/xhfMW.png",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454011307352391690/img_20160814_090303.png"
         ];
         let image = (replys[Math.floor(Math.random() * replys.length)])
            const cat_embed = new Discord.RichEmbed()
