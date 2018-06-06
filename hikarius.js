@@ -20,7 +20,7 @@ client.on('message', message => {
 
 //! Commandes Importantes du bot!\\
 
-   if(message.content === prefix + "help"){
+ if(message.content === prefix + "help"){
     var help_embed = new Discord.RichEmbed()
     .setColor("#FFFFFF")
     .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
@@ -39,10 +39,7 @@ client.on('message', message => {
     .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
     .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")    
     .addField("*h!say*","Permet de faire parler le bot.")
-    message.author.send(helps_embed);
-    message.delete()
-}
-    if(message.content === prefix + "help"){
+
         var helps_embed = new Discord.RichEmbed()
         .setColor("#FFFFFF")
         .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
@@ -56,6 +53,8 @@ client.on('message', message => {
         .addField("**:beginner: | Animaux**","_ _")
         .addField("*h!cat*","Envoie des chats aléatoirement.")
         .addField("Cette commande est en développement","merci d'attendre")
+        .setFooter("© Hikarius, 2018")
+    .setTimestamp()
         message.author.send(helps_embed);
         message.delete() 
 
