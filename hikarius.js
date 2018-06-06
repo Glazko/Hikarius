@@ -23,7 +23,7 @@ client.on('message', message => {
     if(message.content === prefix + "help"){
     var help_embed = new Discord.RichEmbed()
     .setColor("#FFFFFF")
-    .setThumbnail("<:logohikariuspng:450625849662767104>")
+    .setThumbnail("client.avatarURL")
     .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help**","_ _")
     .addField("**<:logohikariuspng:450625849662767104> | Utilitaires**","_ _")
     .addField("*h!hikarius*","Permet d'en savoir un peu plus sur le bot.")
