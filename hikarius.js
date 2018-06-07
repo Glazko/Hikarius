@@ -24,8 +24,8 @@ client.on('message', message => {
     var help_embed = new Discord.RichEmbed()
     .setColor("#FFFFFF")
     .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
-    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 1/2 :paperclip:**","_ _")
-    .addField("**<:discord:432196338369822752> | Utilitaires**","_ _")
+    .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help**","_ _")
+    .addField("**<:logohikariuspng:450625849662767104> | Utilitaires**","_ _")
     .addField("*h!hikarius*","Permet d'en savoir un peu plus sur le bot.")
     .addField("*h!info*","Permet de savoir des info sur ce serveur.")
     .addField("*h!invite*","Permet d'inviter le bot sur ton serveur.")
@@ -35,27 +35,22 @@ client.on('message', message => {
     .addField("*h!kick <@utilisateur> [Raison]*","Permet de kick un utilisateur.")
     .addField("*h!un/mute <@utilisateur>*","Permet de unmute ou mute un utilisateur.")
     .addField("_ _","_ _")
-    .addField("**<:manette:396011519038586881> | Divers**","_ _")
+    .addField("**:space_invader: | Divers**","_ _")
     .addField("*h!8ball [Texte]*","Permet de jouer et de poser des questions au bot")
     .addField("*h!sondage [Texte]*","Permet de faire un sondage grâce au bot.")    
     .addField("*h!say*","Permet de faire parler le bot.")
     message.author.send(help_embed)
+    message.delete()
 
         var helps_embed = new Discord.RichEmbed()
         .setColor("#FFFFFF")
         .setThumbnail("https://cdn.discordapp.com/attachments/450333866998366234/453962746778877964/logo_hikarius_png.png")
-        .addField("**<:logohikariuspng:450625849662767104> Hikarius | Help 2/2 :paperclip: **","_ _")
-        .addField("**<:teterose:404434115375529984> | Fun**","_ _")
-        .addField("*h!punch*","En développement.")
-        .addField("*h!kiss*","En développement.")
-        .addField("*h!calin*","En développement.")
-        .addField("*h!hug*","En développement.")
-        .addField("_ _","_ _")
-        .addField("**:beginner: | Animaux**","_ _")
-        .addField("*h!cat*","Envoie des chats aléatoirement.")
-        .addField("Cette commande est en développement","merci d'attendre")
+        .addField("**:tada: | Fun**","_ _")
+        .addField("*h!punch <@utilisateur>*","Permet de frapper un membre.")
+        .addField("*h!kiss <@utilisateur>*","Permet d'embrasser un membre.")
+        .addField("*h!hug <@utilisateur>*","Permet de caliner un membre.")
         .setFooter("© Hikarius, 2018")
-    .setTimestamp()
+        .setTimestamp()
         message.author.send(helps_embed);
         message.delete() 
 
@@ -104,7 +99,7 @@ var info_embed = new Discord.RichEmbed()
  .addField("**Nombres de membres sur le Discord :**", message.guild.memberCount)
  .addField("**Nombres de rôles :**", message.guild.roles.size)
  .addField("**Nombres de channel :**", message.guild.channels.size)
- .addField("Le salon AFK est le salon vocal :", message.guild.afkChannel)   
+ .addField("**Le salon AFK est le salon vocal :**", message.guild.afkChannel)   
  .setFooter("© Hikarius, 2018")
  .setTimestamp()
  message.channel.sendEmbed(info_embed);
@@ -116,7 +111,7 @@ var invite_embed = new Discord.RichEmbed()
 .setColor("FFFFFF")
 .addField("**<:logohikariuspng:450625849662767104> Hikarius | Invite**","_ _")
 .setThumbnail(message.client.avatarURL)
-.addField("**Voici le lien de Hikarius et du nouveau support !**","**[<:logohikariuspng:450625849662767104> Hikarius](https://discordapp.com/api/oauth2/authorize?client_id=450051278241005569&permissions=272104535&scope=bot)**")
+.addField("**Voici le lien de Hikarius !**","**[<:logohikariuspng:450625849662767104> Hikarius](https://discordapp.com/api/oauth2/authorize?client_id=450051278241005569&permissions=272104535&scope=bot)**")
 .setFooter("© Hikarius, 2018")
  .setTimestamp()
  message.author.send(invite_embed)
@@ -194,7 +189,7 @@ if(message.content === prefix + "clear"){
     message.delete();
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("<:logohikariuspng:450625849662767104> | Tu n'as pas la permission de faire ceci.")
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("<:logohikariuspng:450625849662767104> | Je n'ai pas la permission de faire ceci.")
-    let args = message.content.split(" ").slice (1);
+    let args = message.content.split(" ").slice(1);
     if(!args[0]) return message.channel.send("<:logohikariuspng:450625849662767104> | Indique un nombre entre 1 et 100 pour que je puisse clear.");
     if(args[0] >= 100) return message.channel.send("<:logohikariuspng:450625849662767104> | Veuillez choisir un nombre en dessous de 100.");
     message.channel.bulkDelete(args[0])
@@ -223,7 +218,7 @@ message.channel.sendEmbed(sondage_embed)
 }
 
 if(message.content === prefix + 'avatar') {
-let user = message.mentions.users.first() || message.author;
+let user = message.mention.user.first() || message.author;
 
 var embed = new Discord.RichEmbed()
 .setAuthor(`${user.username}`)
@@ -263,47 +258,106 @@ if(!message.content.startsWith(prefix)) return;
         message.delete()
         break;
 
-        case "cat":
+        case "hug":
+
         var replys = [
-            "https://cdn.discordapp.com/attachments/450333866998366234/453659152674193418/QmaPv.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/453659243396988949/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/453659367452180512/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/453659482149617666/th.png",
-            "https://tse3.mm.bing.net/th?id=OIP.vESUb6dpnwtemKAD-gXCygHaE7&pid=15.1&P=0&w=268&h=179",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454009707208900657/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454009848195973121/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454009959760527370/th.png",
-            "http://chainimage.com/images/fond-ecran-chat-34.jpg",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010261683306496/sleepingcat001.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010378033168395/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010507742019605/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010617561481216/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010712373854208/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010856062320650/ab7d7ab1ab85416111b70b2f6dbdc179--grey-cats-maine-coon-cats.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454010962194726914/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454011090041307148/th.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454011269998182420/xhfMW.png",
-            "https://cdn.discordapp.com/attachments/450333866998366234/454011307352391690/img_20160814_090303.png"
+            "https://cdn.discordapp.com/attachments/450333866998366234/454032596884783104/giphy.gif",
+            "https://cdn.discordapp.com/attachments/450333866998366234/454032811540742154/raw.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271323628371968/giphy_1.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271364426104833/giphy_2.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271392553369611/giphy_3.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271633037983746/raw_1.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271764785266708/giphy_4.gif",
+            "https://cdn.discordapp.com/attachments/442030774976249857/454271918527348736/giphy_5.gif"
         ];
-        let image = (replys[Math.floor(Math.random() * replys.length)])
-           const cat_embed = new Discord.RichEmbed()
-           .addField("**:cat: | Voici un chat !**", "_ _")
-.setImage(image)
-.setColor('#FFFFFF')
-.setFooter("© Hikarius, 2018")
-.setTimestamp()
-message.channel.sendEmbed(cat_embed)
+
+        let hug = (replys[Math.floor(Math.random() * replys.length)])
+        var mention = message.mentions.users.first()
+           if(!mention) {
+             return message.channel.send("<:logohikariuspng:450625849662767104> | Je ne suis pas sur que cet utilisateur existe...");
+        }
+        var hug_embed = new Discord.RichEmbed()
+
+           .addField(":heart: " + message.author.username + " **a caliné** " + mention.username,"_ _")
+           .setImage(hug)
+           .setColor('#FFFFFF')
+           .setFooter("© Hikarius, 2018")
+           .setTimestamp()
+           message.channel.sendEmbed(hug_embed)
+        message.delete()
+
+        break;
+
+        case "kiss":
+
+        var replys = [
+           "https://cdn.discordapp.com/attachments/442030774976249857/454273944862851083/giphy_6.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454273999321432065/giphy_7.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274061107724289/giphy_8.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274143148310538/giphy_9.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274208667795476/giphy_10.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274271221383188/giphy_11.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274733530415104/11e01b02a863643bc41effbdfc950013f411f7c1_hq.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454274861729316866/tumblr_n473d8T0WX1t0q458o1_500.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454275029300019200/giphy_13.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454275332959240223/tenor.gif"
+        ];
+
+        let kiss = (replys[Math.floor(Math.random() * replys.length)])
+        var mention = message.mentions.users.first()
+           if(!mention) {
+             return message.channel.send("<:logohikariuspng:450625849662767104> | Je ne suis pas sur que cet utilisateur existe...");
+        }
+        var kiss_embed = new Discord.RichEmbed()
+
+           .addField(":kiss: " + message.author.username + " **a embrassé** " + mention.username,"_ _")
+           .setImage(kiss)
+           .setColor('#FFFFFF')
+           .setFooter("© Hikarius, 2018")
+           .setTimestamp()
+           message.channel.sendEmbed(kiss_embed)
+        message.delete()
+
+        break;
+
+        case "punch":
+
+        var replys = [
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278110062313472/1.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278123098341376/2.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278160138108928/3.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278164386938880/4.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278182015860736/5.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278196011991050/6.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278225473044480/7.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278245622349834/8.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278257563402240/9.gif",
+           "https://cdn.discordapp.com/attachments/442030774976249857/454278278962741248/10.gif"
+        ];
+
+        let punch = (replys[Math.floor(Math.random() * replys.length)])
+        var mention = message.mentions.users.first()
+           if(!mention) {
+             return message.channel.send("<:logohikariuspng:450625849662767104> | Je ne suis pas sur que cet utilisateur existe...");
+        }
+        var punch_embed = new Discord.RichEmbed()
+
+           .addField(":punch: " + message.author.username + " **a frappé** " + mention.username,"_ _")
+           .setImage(punch)
+           .setColor('#FFFFFF')
+           .setFooter("© Hikarius, 2018")
+           .setTimestamp()
+           message.channel.sendEmbed(punch_embed)
         message.delete()
     }
+
     if(message.content.startsWith(prefix + 'ping')) {
         message.channel.send (":ping_pong: Pong ...").then((message) => {
         message.edit(`🏓 Pong ! La latence est de ${message.createdTimestamp - Date.now()} ms et la latence de L'API est de ${Math.round(client.ping)} ms`);
         });
     }
     
-    
-    
-    if (message.content.split(" ")[0] == prefix + "say")
+     if (message.content.split(" ")[0] == prefix + "say")
     
 {
   message.delete().catch(function() {return 0});
@@ -323,7 +377,7 @@ message.guild.createRole({
 
 if(message.content.startsWith(prefix + 'setConfig')) {   
 message.guild.createChannel('logs', 'logs');   
-message.channel.sendMessage(":warning: | La configuration du bot à bien été effectuer ! Le channel 'logs' et le rôle @Muted ont bien été mis a jour.")
+message.channel.sendMessage(":warning: | Le channel 'logs' et le rôle @Muted ont bien été mis a jour.")
 message.delete()
 }
 if(message.content === prefix + "sarah"){
@@ -340,7 +394,7 @@ message.channel.send(":warning: | Commande en développement !")
 if (message.content === prefix + "unmute"){
 message.channel.send(":warning: | Commande en développement !")
 }
-   
+
 });
 
 client.login(token)
