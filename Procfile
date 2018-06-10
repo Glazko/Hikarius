@@ -1,1 +1,1 @@
-worker: node hikarius
+worker: node main
