@@ -129,7 +129,3 @@ client.on("ready", async () => {
 });
 
 client.login(token)
-
-});
-
-client.login(token)
