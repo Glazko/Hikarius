@@ -41,6 +41,24 @@ client.on("ready", async () => {
             message.channel.sendMessage(":warning: | Le channel `logs` et le rôle `Muted` ont bien été mis a jour.")
             message.delete()
             }
+        
+        if(message.content === prefix + "si" || "serveur info"){
+var info_embed = new Discord.RichEmbed()
+ .setColor("#DF013A")
+ .addField(message.author.avatarURL +" **Noctys | Serveur Info**","_ _")
+ .addField("**Nom du Discord :**", message.guild.iconURl + message.guild.name)
+ .addField("**Propriétaire du discord :**", message.guild.owner)
+ .addField("**ID :**", message.guild.id)
+ .addField("**Région :**", message.guild.region)
+ .addField("**Nombres Membres :**", message.guild.memberCount)
+ .addField("**Nombres de rôles :**", message.guild.roles.size)
+ .addField("**Nombres de channel :**", message.guild.channels.size)
+ .addField("**Le salon AFK :**", message.guild.afkChannel)   
+ .setFooter(message.client.avatarURL + " © Noctys, 2018")
+ .setTimestamp()
+ message.channel.sendEmbed(info_embed);
+ message.delete()
+}
 
             if (message.content.startsWith(prefix + "sondage")) {
                         
