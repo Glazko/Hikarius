@@ -42,7 +42,7 @@ client.on("ready", async () => {
             message.delete()
             }
         
-        if(message.content === prefix + "si" || "serveur info"){
+        if(message.content === prefix + "si"){
 var info_embed = new Discord.RichEmbed()
  .setColor("#DF013A")
  .addField(" **Noctys | Serveur Info**","_ _")
